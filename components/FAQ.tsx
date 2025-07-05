@@ -25,12 +25,12 @@ const FAQ: React.FC = () => {
     {
       id: 3,
       question: "Can I make changes to my website after it's built?",
-      answer: "Absolutely! Minor content updates and changes are included in your monthly subscription. For major design overhauls or new features, we'll provide a custom quote. You'll also have access to a simple content management system for basic updates."
+      answer: "Absolutely! Minor content updates and changes are included in your monthly subscription. For major design overhauls or new features, we'll provide a custom quote."
     },
     {
       id: 4,
       question: "What happens if I want to cancel my subscription?",
-      answer: "You can cancel anytime with 30 days notice. We'll provide you with all website files and help transfer your domain and hosting to another provider if needed. There are no cancellation fees or penalties - we believe in earning your business every month."
+      answer: "You can cancel anytime with 30 days notice. "
     },
     {
       id: 5,

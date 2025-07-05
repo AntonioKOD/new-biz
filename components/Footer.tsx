@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="flex justify-center items-center mb-4">
           {/* GitHub Icon - Hand-drawn style */}
           <a
-            href="https://github.com"
+            href="https://github.com/AntonioKOD"
             target="_blank"
             rel="noopener noreferrer"
             className="mx-2 hover:text-[#E07A5F] transition-colors duration-200"
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* LinkedIn Icon - Hand-drawn style */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/antonio-kodheli-1430aa290/"
             target="_blank"
             rel="noopener noreferrer"
             className="mx-2 hover:text-[#E07A5F] transition-colors duration-200"

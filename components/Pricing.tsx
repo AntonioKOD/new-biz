@@ -206,19 +206,19 @@ const Pricing = () => {
           </p>
         </TextReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-white">
           {additionalServices.map((service, index) => (
             <TextReveal key={index} delay={index * 200}>
               <div className="card-professional h-full group hover:shadow-xl transition-all duration-300">
-                <div className="text-center mb-6">
-                  <h4 className="font-poppins text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#E07A5F] transition-colors duration-300">
+                <div className="text-center mb-6 ">
+                  <h4 className="font-poppins text-2xl font-bold mb-3 group-hover:text-[#E07A5F] transition-colors duration-300">
                     {service.title}
                   </h4>
                   <p className="text-gray-600 font-inter leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  <div className="text-2xl font-bold text-gray-900 font-poppins">
-                    {service.price}
+                  <div className="text-2xl font-bold text-white font-poppins">
+                    <span className="text-white">{service.price}</span>
                   </div>
                 </div>
 

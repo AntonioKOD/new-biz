@@ -110,6 +110,8 @@ const Portfolio = () => {
                   alt={`${item.title} - ${item.description}`}
                   className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-110"
                   loading={index < 3 ? 'eager' : 'lazy'}
+                  width={500}
+                  height={500}
                 />
                 
                 {/* Hover Overlay */}
