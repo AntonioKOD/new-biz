@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface LoadingScreenProps {
   onLoadComplete?: () => void;
@@ -81,10 +82,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadComplete }) => {
             <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8">
               <div className="flex items-center justify-center">
                 <div className="relative">
-                  <img
+                  <Image
                     src="/build.svg"
                     alt="BuildQuick Logo"
                     className="h-16 w-auto filter brightness-0 invert"
+                    width={200}
+                    height={200}
                   />
                   <div className="absolute inset-0 bg-white/20 rounded-xl animate-ping opacity-30"></div>
                 </div>

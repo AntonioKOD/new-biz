@@ -171,10 +171,12 @@ const Navbar = () => {
           {/* Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <div className="flex items-center space-x-3">
-              <img
+              <Image
                 src="/build.svg"
                 alt="BuildQuick Logo"
                 className="h-12 w-auto"
+                width={100}
+                height={100}
               />
               <span className="font-semibold text-lg font-poppins text-gray-900">
                 Menu

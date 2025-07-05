@@ -217,7 +217,7 @@ const Pricing = () => {
                   <p className="text-gray-600 font-inter leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  <div className="text-2xl font-bold text-[#E07A5F] font-poppins">
+                  <div className="text-2xl font-bold text-white font-poppins">
                     {service.price}
                   </div>
                 </div>
