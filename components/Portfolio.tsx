@@ -16,50 +16,50 @@ const Portfolio = () => {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: 'Construct Concepts',
+      title: 'Modern Construction Co.',
       category: 'Construction',
       image: '/construct.png',
-      liveUrl: 'https://constructconcepts.com',
+      liveUrl: '#',
       description: 'Professional construction company website with modern design and project showcase'
     },
     {
       id: 2,
-      title: 'Gjovanas Villas',
+      title: 'Luxury Villa Rentals',
       category: 'Hospitality',
       image: '/gjovanasvillas.png',
-      liveUrl: 'https://gjovanasvillas.com',
-      description: 'Luxury villa rental website with booking system and stunning photography'
+      liveUrl: '#',
+      description: 'Elegant vacation rental website with booking system and stunning photography'
     },
     {
       id: 3,
-      title: 'Hotel As Baksrrjoll',
+      title: 'Boutique Hotel Design',
       category: 'Hotels',
       image: '/hotelas.png',
-      liveUrl: 'https://hotelasbaksrrjoll.com',
-      description: 'Boutique hotel website with reservation system and local attractions guide'
+      liveUrl: '#',
+      description: 'Sophisticated hotel website with reservation system and local attractions guide'
     },
     {
       id: 4,
-      title: 'Malci Construction',
+      title: 'Premium Construction Services',
       category: 'Construction',
       image: '/malci.png',
-      liveUrl: 'https://malciconstruction.com',
+      liveUrl: '#',
       description: 'Full-service construction company with portfolio and service showcase'
     },
     {
       id: 5,
-      title: 'Roaming Mix',
+      title: 'Travel & Lifestyle Blog',
       category: 'Travel',
       image: '/roaming.png',
-      liveUrl: 'https://roamingmix.com',
-      description: 'Travel and lifestyle blog with engaging content and social integration'
+      liveUrl: '#',
+      description: 'Engaging travel blog with rich content and social media integration'
     },
     {
       id: 6,
-      title: 'Unfinished Sentences',
+      title: 'Creative Writing Platform',
       category: 'Creative',
       image: '/unfinished.png',
-      liveUrl: 'https://unfinishedsentences.co',
+      liveUrl: '#',
       description: 'Creative writing platform with community features and publishing tools'
     }
   ];
@@ -74,18 +74,18 @@ const Portfolio = () => {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09z" />
               </svg>
-              Real Projects, Real Results
+              Design Examples & Templates
             </span>
           </div>
           
           <h2 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance leading-[1.1]">
-            <span className="block mb-2">Websites That</span>
-            <span className="block gradient-text">Make a Difference</span>
+            <span className="block mb-2">Beautiful Designs</span>
+            <span className="block gradient-text">Built for Your Success</span>
           </h2>
           
           <p className="font-inter text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed text-balance">
-            From construction companies to luxury villas, creative platforms to travel blogs — 
-            see how we&apos;ve helped businesses across different industries create their perfect digital home.
+            From construction companies to luxury hospitality, creative platforms to travel blogs — 
+            explore our design capabilities and see how we can create the perfect digital presence for your business.
           </p>
         </div>
 
@@ -115,18 +115,13 @@ const Portfolio = () => {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <a
-                      href={item.liveUrl}
-                      className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 focus:outline-2 focus:outline-white focus:outline-offset-2"
-                      aria-label={`View live ${item.title} website`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <div className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      View Live Site
-                    </a>
+                      Design Preview
+                    </div>
                   </div>
                 </div>
               </div>
@@ -137,17 +132,6 @@ const Portfolio = () => {
                   <span className="inline-block bg-gradient-to-r from-[#E07A5F]/10 to-[#D4A373]/10 border border-[#E07A5F]/20 text-[#E07A5F] px-3 py-1 rounded-full text-sm font-medium">
                     {item.category}
                   </span>
-                  <a
-                    href={item.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-[#E07A5F] transition-colors duration-200"
-                    aria-label={`Visit ${item.title} website`}
-                  >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
                 </div>
                 
                 <h3 className="font-poppins text-xl font-bold text-gray-900 group-hover:text-[#E07A5F] transition-colors duration-300">
