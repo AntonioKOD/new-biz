@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and api routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow specific important pages
+Allow: /
+Allow: /services
+Allow: /portfolio
+Allow: /pricing
+Allow: /contact
+
+# Sitemap location
+Sitemap: https://yourcompany.com/sitemap.xml
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Cache directive for images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$ 

@@ -1,0 +1,229 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { 
+      name: 'Home', 
+      href: '#home'
+    },
+    { 
+      name: 'Services', 
+      href: '#services'
+    },
+    { 
+      name: 'Portfolio', 
+      href: '#portfolio'
+    },
+    { 
+      name: 'Process', 
+      href: '#how-it-works'
+    },
+    { 
+      name: 'Pricing', 
+      href: '#pricing'
+    },
+    { 
+      name: 'Contact', 
+      href: '#contact'
+    },
+  ];
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <>
+      <header
+        role="banner"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+          isScrolled 
+            ? 'navbar-scrolled py-4' 
+            : 'navbar-professional py-6'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* Professional Logo */}
+            <div className="flex-shrink-0">
+              <a
+                href="#main-content"
+                aria-label="Professional Web Design Studio - Go to homepage"
+                className="group flex items-center space-x-3"
+              >
+                {/* Logo Icon */}
+                <div className="relative">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#E07A5F] to-[#D4A373] rounded-lg flex items-center justify-center group-hover:scale-105 transition-all duration-200 shadow-sm">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                </div>
+                
+                {/* Logo Text */}
+                <div className={`font-poppins font-semibold transition-all duration-300 ease-out ${
+                  isScrolled ? 'text-xl' : 'text-2xl'
+                }`}>
+                  <span className="text-[#E07A5F]">WebStudio</span>
+                  <span className="text-gray-900 ml-1">Pro</span>
+                </div>
+              </a>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav 
+              className="hidden lg:flex items-center space-x-8"
+              role="navigation"
+              aria-label="Main navigation"
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="nav-link-professional font-medium text-sm tracking-wide"
+                  aria-label={`Navigate to ${link.name} section`}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <a
+                href="#pricing"
+                className="btn-primary"
+                aria-label="Get started with website design"
+              >
+                Get Started
+              </a>
+            </div>
+
+            {/* Mobile Hamburger */}
+            <div className="lg:hidden">
+              <button
+                onClick={toggleMobileMenu}
+                className="relative w-10 h-10 text-gray-900 hover:text-[#E07A5F] focus:outline-none transition-colors duration-200 rounded-lg"
+                aria-label="Toggle mobile menu"
+              >
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span 
+                    className={`block w-5 h-0.5 bg-current transition-all duration-300 ease-out ${
+                      isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
+                    }`}
+                  ></span>
+                  <span 
+                    className={`block w-5 h-0.5 bg-current transition-all duration-300 ease-out ${
+                      isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  ></span>
+                  <span 
+                    className={`block w-5 h-0.5 bg-current transition-all duration-300 ease-out ${
+                      isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
+                    }`}
+                  ></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu */}
+      <div 
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ease-out ${
+          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`} 
+        role="dialog" 
+        aria-modal="true" 
+        aria-label="Mobile navigation menu"
+      >
+        {/* Backdrop */}
+        <div
+          className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${
+            isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        ></div>
+
+        {/* Mobile Menu Panel */}
+        <nav 
+          className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] mobile-menu-professional shadow-xl transform transition-all duration-300 ease-out ${
+            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          role="navigation" 
+          aria-label="Mobile navigation"
+        >
+          {/* Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-gray-100">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#E07A5F] to-[#D4A373] rounded-lg flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span className="font-semibold text-lg font-poppins text-gray-900">
+                Menu
+              </span>
+            </div>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-gray-600 hover:text-[#E07A5F] focus:outline-2 focus:outline-[#E07A5F] rounded-lg transition-colors duration-200"
+              aria-label="Close mobile menu"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Navigation Links */}
+          <div className="flex flex-col px-6 py-8 space-y-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="mobile-nav-link font-medium text-lg"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label={`Navigate to ${link.name} section`}
+              >
+                {link.name}
+              </a>
+            ))}
+            
+            {/* Mobile CTA Button */}
+            <div className="pt-6">
+              <a
+                href="#pricing"
+                className="btn-primary w-full text-center block"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Get started with website design"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </>
+  );
+};
+
+export default Navbar; 
