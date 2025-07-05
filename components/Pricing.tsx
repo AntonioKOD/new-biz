@@ -17,11 +17,9 @@ const Pricing = () => {
       'Professional domain & SSL security included',
       'Lightning-fast hosting & 99.9% uptime',
       'SEO optimization for better discovery',
-      'Contact forms & lead capture system',
       'Google Analytics integration',
       'Monthly updates & maintenance',
       'Email support & training',
-      'Content management system'
     ],
     highlights: [
       'No setup fees',
