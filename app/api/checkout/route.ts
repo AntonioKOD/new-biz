@@ -3,9 +3,7 @@ import Stripe from 'stripe';
 import { Resend } from 'resend';
 
 const stripe = process.env.STRIPE_SECRET_KEY 
-  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: '2025-05-28.basil',
-    })
+  ? new Stripe(process.env.STRIPE_SECRET_KEY)
   : null;
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_DpMnPWGn_2GJUod6MkbpUDrJG7jtn5vUe');

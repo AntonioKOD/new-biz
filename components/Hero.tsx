@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { TypingAnimation, TextReveal } from './AnimatedComponents';
+import { loadStripe } from '@stripe/stripe-js';
 
 const Hero: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const target = document.querySelector('#pricing');
@@ -12,6 +15,43 @@ const Hero: React.FC = () => {
         behavior: 'smooth',
         block: 'start'
       });
+    }
+  };
+
+  const handleCheckout = async () => {
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          siteDescription: 'Professional Website Package',
+          referenceUrl: ''
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const { sessionId } = await response.json();
+      
+      // Redirect to Stripe Checkout
+      const stripe = await import('@stripe/stripe-js').then(module => 
+        module.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+      );
+      
+      if (stripe) {
+        await stripe.redirectToCheckout({ sessionId });
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('There was an error processing your request. Please try again or contact support.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -106,16 +146,26 @@ const Hero: React.FC = () => {
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <button
-                onClick={handleSmoothScroll}
-                className="btn-primary py-4 px-8 text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden"
-                aria-label="Start your digital experience journey"
+                onClick={handleCheckout}
+                disabled={isLoading}
+                className="btn-primary py-4 px-8 text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Start your website project"
                 type="button"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  I&apos;m Ready to Get Started!
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      I&apos;m Ready to Get Started!
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </>
+                  )}
                 </span>
               </button>
               

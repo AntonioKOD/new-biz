@@ -10,9 +10,11 @@ interface AnimatedCounterProps {
   suffix?: string;
 }
 
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface MagneticButtonProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
 }
 
 interface MorphingCardProps {
@@ -123,38 +125,47 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 // Magnetic Button Component
 export const MagneticButton: React.FC<MagneticButtonProps> = ({ 
   children, 
-  className = '', 
+  className = '',
+  onClick,
+  disabled = false,
   ...props 
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current) return;
+    if (disabled) return;
     
-    const rect = buttonRef.current.getBoundingClientRect();
+    const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
     
-    const deltaX = (e.clientX - centerX) * 0.2;
-    const deltaY = (e.clientY - centerY) * 0.2;
+    const deltaX = (e.clientX - centerX) * 0.1;
+    const deltaY = (e.clientY - centerY) * 0.1;
     
     setPosition({ x: deltaX, y: deltaY });
   };
 
+  const handleMouseEnter = () => {
+    if (!disabled) setIsHovered(true);
+  };
+
   const handleMouseLeave = () => {
+    setIsHovered(false);
     setPosition({ x: 0, y: 0 });
   };
 
   return (
     <button
-      ref={buttonRef}
-      className={`transform transition-transform duration-300 ${className}`}
+      className={`relative transition-all duration-300 ease-out ${className} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
+        transform: `translate(${position.x}px, ${position.y}px) scale(${isHovered && !disabled ? 1.05 : 1})`,
       }}
       onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+      disabled={disabled}
       {...props}
     >
       {children}

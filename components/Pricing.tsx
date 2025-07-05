@@ -1,9 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { AnimatedCounter, MagneticButton, TextReveal } from './AnimatedComponents';
 
 const Pricing = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const mainPlan = {
     id: 'professional',
     name: 'Professional Website',
@@ -48,6 +50,43 @@ const Pricing = () => {
       features: ['Custom integrations', 'Dedicated support', 'Multiple environments', 'Advanced security', 'Performance optimization']
     }
   ];
+
+  const handleCheckout = async () => {
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          siteDescription: 'Professional Website Package',
+          referenceUrl: ''
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const { sessionId } = await response.json();
+      
+      // Redirect to Stripe Checkout
+      const stripe = await import('@stripe/stripe-js').then(module => 
+        module.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+      );
+      
+      if (stripe) {
+        await stripe.redirectToCheckout({ sessionId });
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('There was an error processing your request. Please try again or contact support.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section id="pricing" className="section-spacing px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
@@ -154,15 +193,28 @@ const Pricing = () => {
                 </div>
 
                 {/* CTA Button */}
-                <MagneticButton className="btn-primary py-5 px-12 text-xl font-bold shadow-2xl hover:shadow-3xl group/btn">
+                <MagneticButton 
+                  className="btn-primary py-5 px-12 text-xl font-bold shadow-2xl hover:shadow-3xl group/btn disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={handleCheckout}
+                  disabled={isLoading}
+                >
                   <span className="flex items-center justify-center gap-3">
-                    <svg className="w-6 h-6 group-hover/btn:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    Start My Website Today
-                    <svg className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    {isLoading ? (
+                      <>
+                        <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Processing...
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-6 h-6 group-hover/btn:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Start My Website Today
+                        <svg className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </>
+                    )}
                   </span>
                 </MagneticButton>
 
