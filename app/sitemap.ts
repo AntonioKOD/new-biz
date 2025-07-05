@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://yourcompany.com'
+  const baseUrl = 'https://buildquick.io'
   const currentDate = new Date()
   
   return [
@@ -35,12 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}#testimonials`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
+
     {
       url: `${baseUrl}#faq`,
       lastModified: currentDate,

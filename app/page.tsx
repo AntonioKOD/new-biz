@@ -7,7 +7,7 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import HowItWorks from '../components/HowItWorks';
 import Pricing from '../components/Pricing';
-import Testimonials from '../components/Testimonials';
+
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import LoadingScreen from '../components/LoadingScreen';
@@ -52,8 +52,7 @@ export default function Home() {
           {/* Portfolio Section */}
           <Portfolio />
           
-          {/* Testimonials Section */}
-          <Testimonials />
+
           
           {/* Pricing Section */}
           <Pricing />

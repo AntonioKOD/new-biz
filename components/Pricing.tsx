@@ -172,7 +172,7 @@ const Pricing = () => {
                 {/* Legal Small Print */}
                 <div className="mt-6 max-w-2xl mx-auto">
                   <p className="text-xs text-gray-500 font-inter leading-relaxed text-center">
-                    By purchasing this service, you acknowledge and agree that all website code, templates, and proprietary development methods remain the intellectual property of WebStudio Pro. You receive a license to use the final website for your business purposes. Custom content, images, and branding provided by you remain your property.
+                    By purchasing this service, you acknowledge and agree that all website code, templates, and proprietary development methods remain the intellectual property of BuildQuick. You receive a license to use the final website for your business purposes. Custom content, images, and branding provided by you remain your property.
                   </p>
                 </div>
 

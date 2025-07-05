@@ -9,10 +9,10 @@ const Footer = () => {
         {/* Contact Email */}
         <div className="mb-4">
           <a
-            href="mailto:hello@yourcompany.com"
+            href="mailto:hello@buildquick.io"
             className="text-lg underline hover:text-[#E07A5F] transition-colors duration-200"
           >
-            hello@yourcompany.com
+            hello@buildquick.io
           </a>
         </div>
 
@@ -87,7 +87,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-sm mt-4 text-[#9CA3AF]">
-          <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} BuildQuick. All rights reserved.</p>
           <p className="mt-1">
             Built with ❤️ for businesses ready to grow online
           </p>

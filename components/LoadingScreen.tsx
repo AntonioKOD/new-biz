@@ -79,19 +79,19 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadComplete }) => {
             
             {/* Logo */}
             <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
-                    <svg className="w-8 h-8 text-[#E07A5F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09z" />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 bg-white rounded-xl animate-ping opacity-20"></div>
+                  <img
+                    src="/build.svg"
+                    alt="BuildQuick Logo"
+                    className="h-16 w-auto filter brightness-0 invert"
+                  />
+                  <div className="absolute inset-0 bg-white/20 rounded-xl animate-ping opacity-30"></div>
                 </div>
-                <div className="text-left">
-                  <div className="text-2xl font-bold font-poppins tracking-tight">DesignCraft</div>
-                  <div className="text-sm opacity-80 font-inter">Digital Experiences</div>
-                </div>
+              </div>
+              <div className="text-center mt-4">
+                <div className="text-2xl font-bold font-poppins tracking-tight">BuildQuick</div>
+                <div className="text-sm opacity-80 font-inter">Digital Experiences</div>
               </div>
             </div>
           </div>

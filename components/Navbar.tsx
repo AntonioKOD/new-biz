@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,34 +55,30 @@ const Navbar = () => {
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           isScrolled 
-            ? 'navbar-scrolled py-4' 
-            : 'navbar-professional py-6'
+            ? 'navbar-scrolled py-2' 
+            : 'navbar-professional py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            {/* Professional Logo */}
-            <div className="flex-shrink-0">
+            {/* BuildQuick Logo */}
+            <div className="flex-shrink-0 -mb-4">
               <a
                 href="#main-content"
-                aria-label="Professional Web Design Studio - Go to homepage"
-                className="group flex items-center space-x-3"
+                aria-label="BuildQuick - Go to homepage"
+                className="group flex items-center"
               >
-                {/* Logo Icon */}
-                <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#E07A5F] to-[#D4A373] rounded-lg flex items-center justify-center group-hover:scale-105 transition-all duration-200 shadow-sm">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                </div>
-                
-                {/* Logo Text */}
-                <div className={`font-poppins font-semibold transition-all duration-300 ease-out ${
-                  isScrolled ? 'text-xl' : 'text-2xl'
-                }`}>
-                  <span className="text-[#E07A5F]">WebStudio</span>
-                  <span className="text-gray-900 ml-1">Pro</span>
+                {/* Logo Image */}
+                <div className='-mt-4'>
+                  <Image
+                    src="/build.svg"
+                    alt="BuildQuick Logo"
+                    className={`transition-all duration-300 ease-out group-hover:scale-105 ${
+                      isScrolled ? 'h-20 w-auto' : 'h-28 w-auto'
+                    }`}
+                    width={200}
+                    height={200}
+                  />
                 </div>
               </a>
             </div>
@@ -174,11 +171,11 @@ const Navbar = () => {
           {/* Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#E07A5F] to-[#D4A373] rounded-lg flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
+              <img
+                src="/build.svg"
+                alt="BuildQuick Logo"
+                className="h-12 w-auto"
+              />
               <span className="font-semibold text-lg font-poppins text-gray-900">
                 Menu
               </span>

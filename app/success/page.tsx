@@ -59,10 +59,10 @@ export default function SuccessPage() {
           <p className="text-sm text-[#666666]">
             Questions? Email us at{' '}
             <a 
-              href="mailto:hello@yourcompany.com" 
+              href="mailto:hello@buildquick.io" 
               className="text-[#E07A5F] hover:underline"
             >
-              hello@yourcompany.com
+                              hello@buildquick.io
             </a>
           </p>
         </div>

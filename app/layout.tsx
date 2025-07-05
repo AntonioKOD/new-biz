@@ -34,25 +34,25 @@ export const metadata: Metadata = {
     "fast website delivery",
     "SEO optimized websites"
   ],
-  authors: [{ name: "Professional Web Design Studio" }],
-  creator: "Professional Web Design Studio",
-  publisher: "Professional Web Design Studio",
+  authors: [{ name: "BuildQuick" }],
+  creator: "BuildQuick",
+  publisher: "BuildQuick",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://yourcompany.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://buildquick.io'),
   alternates: {
     canonical: '/',
   },
       openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourcompany.com',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://buildquick.io',
       title: 'Professional Website Design $40/month - Custom Sites with Hosting Included',
       description: 'Get a stunning custom website built in just 7 days for only $40/month. Includes hosting, domain, SSL, and lifetime support.',
-      siteName: 'Professional Web Design Studio',
+      siteName: 'BuildQuick',
       images: [
         {
           url: '/og-image.jpg',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
       title: 'Professional Website Design $40/month - Custom Sites with Hosting Included',
       description: 'Get a stunning custom website built in just 7 days for only $40/month. Includes hosting, domain, SSL, and lifetime support.',
     images: ['/og-image.jpg'],
-    creator: '@webdesignstudio',
+    creator: '@buildquick',
   },
   robots: {
     index: true,
@@ -95,15 +95,15 @@ export default function RootLayout({
   const websiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Professional Web Design Studio",
+    "name": "BuildQuick",
     "description": "Affordable professional website design and development services starting at $40/month",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://yourcompany.com",
-    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://yourcompany.com"}/logo.png`,
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://buildquick.io",
+    "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://buildquick.io"}/build.svg`,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-555-123-4567",
       "contactType": "customer service",
-      "email": "hello@yourcompany.com",
+      "email": "hello@buildquick.io",
       "availableLanguage": "en",
       "areaServed": "US"
     },
@@ -112,9 +112,9 @@ export default function RootLayout({
       "addressCountry": "US"
     },
     "sameAs": [
-      "https://github.com/yourcompany",
-      "https://linkedin.com/company/yourcompany",
-      "https://twitter.com/webdesignstudio"
+      "https://github.com/buildquick",
+      "https://linkedin.com/company/buildquick",
+      "https://twitter.com/buildquick"
     ],
           "offers": {
         "@type": "Offer",
@@ -141,7 +141,7 @@ export default function RootLayout({
     "description": "Custom website design and development with hosting and domain included for $40/month",
     "provider": {
       "@type": "Organization",
-      "name": "Professional Web Design Studio"
+      "name": "BuildQuick"
     },
     "areaServed": "US",
     "hasOfferCatalog": {

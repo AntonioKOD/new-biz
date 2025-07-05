@@ -120,8 +120,8 @@ const Services: React.FC = () => {
                   </div>
                   
                   {/* Emotion Badge */}
-                  <div className="inline-block bg-gradient-to-r from-[#E07A5F]/10 to-[#D4A373]/10 border border-[#E07A5F]/20 text-[#E07A5F] px-4 py-2 rounded-full text-sm font-semibold mb-4 font-poppins group-hover:bg-gradient-to-r group-hover:from-[#E07A5F]/15 group-hover:to-[#D4A373]/15 transition-all duration-300">
-                    {experience.emotion}
+                  <div className="inline-block bg-gradient-to-r from-[#E07A5F]/10 to-[#D4A373]/10 border border-[#E07A5F]/20 px-4 py-2 rounded-full text-sm font-semibold mb-4 font-poppins group-hover:bg-gradient-to-r group-hover:from-[#E07A5F]/15 group-hover:to-[#D4A373]/15 transition-all duration-300">
+                    <span className="text-[#E07A5F]">{experience.emotion}</span>
                   </div>
                   
                   {/* Title */}
