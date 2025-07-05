@@ -248,43 +248,6 @@ const Pricing = () => {
             </TextReveal>
           ))}
         </div>
-
-        {/* FAQ Section */}
-        <TextReveal className="text-center">
-          <div className="card-professional max-w-4xl mx-auto">
-            <h3 className="font-poppins text-2xl font-bold text-gray-900 mb-8">
-              Frequently Asked <span className="gradient-text">Questions</span>
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-              <div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">What&apos;s included in $40/month?</h4>
-                <p className="text-gray-700 font-inter">Everything! Design, development, hosting, domain, SSL, updates, and support. No extra fees.</p>
-              </div>
-              <div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">How quickly can you deliver?</h4>
-                <p className="text-gray-700 font-inter">Most websites are completed within 5-7 business days from project start.</p>
-              </div>
-              <div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">Can I cancel anytime?</h4>
-                <p className="text-gray-700 font-inter">Yes! No contracts or commitments. Cancel anytime with 30 days notice.</p>
-              </div>
-              <div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">Do I own my website?</h4>
-                <p className="text-gray-700 font-inter">Absolutely! You own all content, images, and can export everything anytime.</p>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-8 border-t border-gray-100">
-              <p className="text-gray-700 font-inter">
-                Still have questions? 
-                <a href="#contact" className="text-[#E07A5F] hover:underline font-semibold ml-1">
-                  Let&apos;s talk about your project →
-                </a>
-              </p>
-            </div>
-          </div>
-        </TextReveal>
       </div>
     </section>
   );
