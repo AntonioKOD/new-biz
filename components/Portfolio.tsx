@@ -48,11 +48,11 @@ const Portfolio = () => {
     },
     {
       id: 5,
-      title: 'Travel & Lifestyle Blog',
+      title: 'Event Bartender Services',
       category: 'Travel',
       image: '/roaming.png',
       liveUrl: '#',
-      description: 'Engaging travel blog with rich content and social media integration'
+      description: 'Event bartender services with a focus on creating a unique and memorable experience for guests'
     },
     {
       id: 6,

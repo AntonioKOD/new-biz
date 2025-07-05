@@ -27,7 +27,6 @@ const Pricing = () => {
       'No setup fees',
       'No hidden costs', 
       'Cancel anytime',
-      'Own your content'
     ]
   };
 
