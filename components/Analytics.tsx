@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useEffect } from 'react';
@@ -86,7 +87,7 @@ const Analytics = () => {
     };
 
     // Track time on page
-    let startTime = Date.now();
+    const startTime = Date.now();
     const trackTimeOnPage = () => {
       const timeSpent = Math.round((Date.now() - startTime) / 1000);
       
