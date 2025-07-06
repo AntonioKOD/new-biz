@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-      {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
+      {isLoading && <LoadingScreen onComplete={handleLoadComplete} />}
       
       <div className={`transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         <Layout>
