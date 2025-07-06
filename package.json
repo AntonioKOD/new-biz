@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check-env": "node scripts/check-env.js"
+    "check-env": "node scripts/check-env.js",
+    "verify-analytics": "node scripts/verify-analytics.js"
   },
   "dependencies": {
     "@next/third-parties": "^15.3.5",
