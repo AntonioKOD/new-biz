@@ -143,7 +143,7 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
             <TextReveal delay={200}>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Help us understand your vision so we can create the perfect website for your business. 
-                After checkout, we'll reach out to discuss the details and get started on your project.
+                After checkout, we&apos;ll reach out to discuss the details and get started on your project.
               </p>
             </TextReveal>
           </div>
@@ -381,8 +381,8 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
                   <h3 className="font-semibold text-blue-900 mb-2">What happens next?</h3>
                   <ul className="text-blue-800 text-sm space-y-1">
                     <li>• Complete your payment securely with Stripe</li>
-                    <li>• We'll review your information and reach out within 24 hours</li>
-                    <li>• We'll schedule a call to discuss your project in detail</li>
+                    <li>• We&apos;ll review your information and reach out within 24 hours</li>
+                    <li>• We&apos;ll schedule a call to discuss your project in detail</li>
                     <li>• Your website development will begin based on your timeline</li>
                   </ul>
                 </div>
