@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="home"
-      className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 relative overflow-hidden"
+      className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden"
       aria-label="Hero section - Professional website design services"
       role="banner"
     >

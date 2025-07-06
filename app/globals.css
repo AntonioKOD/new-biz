@@ -208,7 +208,7 @@ footer.bg-\[#111827\] * {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 60px;
 }
 
 /* Minimalist Scrollbar */
@@ -705,7 +705,7 @@ body {
 /* Mobile Optimizations */
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 80px;
+    scroll-padding-top: 50px;
   }
   
   .section-spacing {
@@ -902,11 +902,11 @@ img, video {
 
   /* Navbar background styles */
   .navbar-professional {
-    @apply bg-white/90 backdrop-blur-lg border-b border-gray-100/50;
+    @apply bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-sm;
   }
 
   .navbar-scrolled {
-    @apply bg-white/95 backdrop-blur-xl shadow-sm border-b border-gray-200/50;
+    @apply bg-white/98 backdrop-blur-xl shadow-md border-b border-gray-200/50;
   }
 
   /* Mobile menu improvements */
@@ -1053,6 +1053,12 @@ img, video {
   /* Better touch targets */
   button, a, input, select, textarea {
     @apply touch-manipulation;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }
 

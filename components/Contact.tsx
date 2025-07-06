@@ -183,7 +183,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="contact" className="pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Sophisticated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-80 h-80 bg-gradient-to-br from-[#E07A5F]/6 to-[#D4A373]/4 rounded-full blur-3xl"></div>

@@ -85,31 +85,27 @@ const Navbar = () => {
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           isScrolled 
-            ? 'navbar-scrolled py-2' 
-            : 'navbar-professional py-4'
+            ? 'navbar-scrolled py-1' 
+            : 'navbar-professional py-1'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* BuildQuick Logo */}
-            <div className="flex-shrink-0 -mb-4">
+            <div className="flex-shrink-0">
               <a
                 href="#main-content"
                 aria-label="BuildQuick - Go to homepage"
                 className="group flex items-center"
               >
                 {/* Logo Image */}
-                <div className='-mt-4'>
-                  <Image
-                    src="/build.svg"
-                    alt="BuildQuick Logo"
-                    className={`transition-all duration-300 ease-out group-hover:scale-105 ${
-                      isScrolled ? 'h-20 w-auto' : 'h-28 w-auto'
-                    }`}
-                    width={200}
-                    height={200}
-                  />
-                </div>
+                <Image
+                  src="/build.svg"
+                  alt="BuildQuick Logo"
+                  className={`transition-all duration-300 ease-out group-hover:scale-105 -m-2`}
+                  width={100}
+                  height={100}
+                />
               </a>
             </div>
 
@@ -204,9 +200,9 @@ const Navbar = () => {
               <Image
                 src="/build.svg"
                 alt="BuildQuick Logo"
-                className="h-12 w-auto"
-                width={100}
-                height={100}
+                className="h-4"
+                width={16}
+                height={16}
               />
               <span className="font-semibold text-lg font-poppins text-gray-900">
                 Menu

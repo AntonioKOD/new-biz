@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -46,10 +47,14 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               transition={{ duration: 0.5 }}
               className="mb-8 sm:mb-12"
             >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-gradient-to-br from-[#E07A5F] to-[#D4A373] rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-white rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+                <Image
+                  src="/build.svg"
+                  alt="BuildQuick Logo"
+                  className="h-10 sm:h-12 w-auto"
+                  width={100}
+                  height={100}
+                />
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 font-poppins">
                 BuildQuick

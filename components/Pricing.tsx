@@ -118,7 +118,7 @@ const Pricing = () => {
   }
 
   return (
-    <section id="pricing" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section id="pricing" className="pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
       {/* Sophisticated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-[#E07A5F]/4 to-[#D4A373]/6 rounded-full blur-3xl"></div>

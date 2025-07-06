@@ -65,7 +65,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="portfolio" className="pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
