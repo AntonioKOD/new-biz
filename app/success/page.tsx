@@ -15,7 +15,7 @@ export default function SuccessPage() {
             Welcome to the Team! 🎉
           </h1>
           <p className="text-[#666666] mb-6">
-            Your subscription has been successfully activated. We&apos;ll be in touch within 24 hours to start bringing your website to life.
+            Your subscription has been successfully activated! We&apos;ve received your project details and will be in touch within 24 hours to discuss your website requirements and get started.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export default function SuccessPage() {
                 <span className="text-white text-sm font-bold">1</span>
               </div>
               <p className="text-[#666666] text-sm">
-                Our team will review your project details and reach out within 24 hours
+                Our team will review your project details and reach out within 24 hours to discuss your requirements
               </p>
             </div>
             <div className="flex items-start space-x-3">

@@ -4,9 +4,11 @@
 import React, { useState } from 'react';
 import { TypingAnimation, TextReveal } from './AnimatedComponents';
 import { loadStripe } from '@stripe/stripe-js';
+import WebsiteInfoForm, { WebsiteFormData } from './WebsiteInfoForm';
 
 const Hero: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -19,7 +21,15 @@ const Hero: React.FC = () => {
     }
   };
 
-  const handleCheckout = async () => {
+  const handleGetStarted = () => {
+    setShowForm(true);
+  };
+
+  const handleFormBack = () => {
+    setShowForm(false);
+  };
+
+  const handleFormSubmit = async (formData: WebsiteFormData) => {
     setIsLoading(true);
     
     try {
@@ -29,8 +39,16 @@ const Hero: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          siteDescription: 'Professional Website Package',
-          referenceUrl: ''
+          siteDescription: formData.siteDescription,
+          referenceUrl: formData.referenceUrl,
+          businessName: formData.businessName,
+          businessType: formData.businessType,
+          contactEmail: formData.contactEmail,
+          contactPhone: formData.contactPhone,
+          features: formData.features,
+          timeline: formData.timeline,
+          budget: formData.budget,
+          additionalNotes: formData.additionalNotes
         }),
       });
 
@@ -55,6 +73,17 @@ const Hero: React.FC = () => {
       setIsLoading(false);
     }
   };
+
+  // Show the form if user clicked "Get Started"
+  if (showForm) {
+    return (
+      <WebsiteInfoForm
+        onSubmit={handleFormSubmit}
+        onBack={handleFormBack}
+        isLoading={isLoading}
+      />
+    );
+  }
 
   return (
     <section 
@@ -147,26 +176,19 @@ const Hero: React.FC = () => {
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <button
-                onClick={handleCheckout}
+                onClick={handleGetStarted}
                 disabled={isLoading}
                 className="btn-primary py-4 px-8 text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Start your website project"
                 type="button"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  {isLoading ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      I&apos;m Ready to Get Started!
-                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </>
-                  )}
+                  <>
+                    I&apos;m Ready to Get Started!
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </>
                 </span>
               </button>
               

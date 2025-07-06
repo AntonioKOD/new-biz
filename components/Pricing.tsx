@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import { AnimatedCounter, MagneticButton, TextReveal } from './AnimatedComponents';
+import WebsiteInfoForm, { WebsiteFormData } from './WebsiteInfoForm';
 
 const Pricing = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const mainPlan = {
     id: 'professional',
@@ -51,7 +53,15 @@ const Pricing = () => {
     }
   ];
 
-  const handleCheckout = async () => {
+  const handleGetStarted = () => {
+    setShowForm(true);
+  };
+
+  const handleFormBack = () => {
+    setShowForm(false);
+  };
+
+  const handleFormSubmit = async (formData: WebsiteFormData) => {
     setIsLoading(true);
     
     try {
@@ -61,8 +71,16 @@ const Pricing = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          siteDescription: 'Professional Website Package',
-          referenceUrl: ''
+          siteDescription: formData.siteDescription,
+          referenceUrl: formData.referenceUrl,
+          businessName: formData.businessName,
+          businessType: formData.businessType,
+          contactEmail: formData.contactEmail,
+          contactPhone: formData.contactPhone,
+          features: formData.features,
+          timeline: formData.timeline,
+          budget: formData.budget,
+          additionalNotes: formData.additionalNotes
         }),
       });
 
@@ -87,6 +105,17 @@ const Pricing = () => {
       setIsLoading(false);
     }
   };
+
+  // Show the form if user clicked "Get Started"
+  if (showForm) {
+    return (
+      <WebsiteInfoForm
+        onSubmit={handleFormSubmit}
+        onBack={handleFormBack}
+        isLoading={isLoading}
+      />
+    );
+  }
 
   return (
     <section id="pricing" className="section-spacing px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
@@ -195,7 +224,7 @@ const Pricing = () => {
                 {/* CTA Button */}
                 <MagneticButton 
                   className="btn-primary py-5 px-12 text-xl font-bold shadow-2xl hover:shadow-3xl group/btn disabled:opacity-50 disabled:cursor-not-allowed"
-                  onClick={handleCheckout}
+                  onClick={handleGetStarted}
                   disabled={isLoading}
                 >
                   <span className="flex items-center justify-center gap-3">
@@ -209,7 +238,7 @@ const Pricing = () => {
                         <svg className="w-6 h-6 group-hover/btn:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        Start My Website Today
+                        Get Started Today
                         <svg className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>

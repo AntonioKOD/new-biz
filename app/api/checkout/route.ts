@@ -17,7 +17,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { siteDescription, referenceUrl } = await request.json();
+    const { 
+      siteDescription, 
+      referenceUrl, 
+      businessName, 
+      businessType, 
+      contactEmail, 
+      contactPhone, 
+      features, 
+      timeline, 
+      budget, 
+      additionalNotes 
+    } = await request.json();
     
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -43,11 +54,27 @@ export async function POST(request: NextRequest) {
       metadata: {
         siteDescription,
         referenceUrl: referenceUrl || '',
+        businessName,
+        businessType,
+        contactEmail,
+        contactPhone: contactPhone || '',
+        features: features ? features.join(', ') : '',
+        timeline,
+        budget,
+        additionalNotes: additionalNotes || '',
       },
       subscription_data: {
         metadata: {
           siteDescription,
           referenceUrl: referenceUrl || '',
+          businessName,
+          businessType,
+          contactEmail,
+          contactPhone: contactPhone || '',
+          features: features ? features.join(', ') : '',
+          timeline,
+          budget,
+          additionalNotes: additionalNotes || '',
         },
       },
     });
@@ -61,11 +88,20 @@ export async function POST(request: NextRequest) {
           </div>
           
           <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-            <h2 style="color: #E07A5F; margin-top: 0; font-size: 20px;">Subscription Details</h2>
-            <p style="margin: 10px 0; font-size: 16px;"><strong>Amount:</strong> $40/month</p>
-            <p style="margin: 10px 0; font-size: 16px;"><strong>Session ID:</strong> ${session.id}</p>
+            <h2 style="color: #E07A5F; margin-top: 0; font-size: 20px;">New Website Project Details</h2>
+            <p style="margin: 10px 0; font-size: 16px;"><strong>Business Name:</strong> ${businessName}</p>
+            <p style="margin: 10px 0; font-size: 16px;"><strong>Business Type:</strong> ${businessType}</p>
+            <p style="margin: 10px 0; font-size: 16px;"><strong>Contact Email:</strong> ${contactEmail}</p>
+            ${contactPhone ? `<p style="margin: 10px 0; font-size: 16px;"><strong>Contact Phone:</strong> ${contactPhone}</p>` : ''}
             <p style="margin: 10px 0; font-size: 16px;"><strong>Site Description:</strong> ${siteDescription}</p>
             ${referenceUrl ? `<p style="margin: 10px 0; font-size: 16px;"><strong>Reference URL:</strong> ${referenceUrl}</p>` : ''}
+            ${features && features.length > 0 ? `<p style="margin: 10px 0; font-size: 16px;"><strong>Desired Features:</strong> ${features.join(', ')}</p>` : ''}
+            ${timeline ? `<p style="margin: 10px 0; font-size: 16px;"><strong>Timeline:</strong> ${timeline}</p>` : ''}
+            ${budget ? `<p style="margin: 10px 0; font-size: 16px;"><strong>Budget:</strong> ${budget}</p>` : ''}
+            ${additionalNotes ? `<p style="margin: 10px 0; font-size: 16px;"><strong>Additional Notes:</strong> ${additionalNotes}</p>` : ''}
+            <hr style="margin: 20px 0; border: none; border-top: 1px solid #dee2e6;">
+            <p style="margin: 10px 0; font-size: 16px;"><strong>Subscription Amount:</strong> $40/month</p>
+            <p style="margin: 10px 0; font-size: 16px;"><strong>Session ID:</strong> ${session.id}</p>
           </div>
 
           <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; text-align: center;">
@@ -79,7 +115,7 @@ export async function POST(request: NextRequest) {
       await resend.emails.send({
         from: 'BuildQuick Notifications <info@buildquick.io>',
         to: ['hello@buildquick.io'],
-        subject: `New Subscription - $40/month`,
+        subject: `New Website Project - ${businessName} - $40/month`,
         html: emailContent,
       });
     } catch (emailError) {
