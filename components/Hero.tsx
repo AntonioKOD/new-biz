@@ -88,8 +88,9 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="home"
-      className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 relative overflow-hidden"
+      className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 relative overflow-hidden"
       aria-label="Hero section - Professional website design services"
+      role="banner"
     >
       {/* Sophisticated Decorative Blur Layers */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -99,7 +100,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-16 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12 sm:gap-16 lg:gap-20">
           {/* Left Side Content */}
           <div className="flex-1 text-center lg:text-left">
             {/* Enhanced Trust Badge */}
@@ -117,7 +118,7 @@ const Hero: React.FC = () => {
             </div>
             
             {/* Enhanced Main Headline with Fixed Animation */}
-            <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] mb-8 text-balance">
+            <h1 className="font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] mb-6 sm:mb-8 text-balance">
               <TextReveal className="block mb-4">
                 <span className="text-gray-900">Your Business</span>
               </TextReveal>
@@ -130,23 +131,23 @@ const Hero: React.FC = () => {
                   pauseTime={2500}
                 />
               </TextReveal>
-              <TextReveal delay={600} className="block text-gray-600 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium">
+              <TextReveal delay={600} className="block text-gray-600 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium">
                 <span className="gradient-text">Let&apos;s Make It Happen.</span>
               </TextReveal>
             </h1>
             
             {/* Enhanced Value Proposition with Animation */}
-            <TextReveal delay={800} className="mb-8">
-              <p className="font-inter text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-balance">
+            <TextReveal delay={800} className="mb-6 sm:mb-8">
+              <p className="font-inter text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-balance">
                 Your business has a story worth telling. We&apos;re here to help you share it with the world through a website that feels authentically you.
-                <span className="block mt-4 text-lg font-semibold text-gray-900">
-                  Professional websites starting at <span className="text-3xl gradient-text font-bold">$40</span>/month — because every business deserves to shine online.
+                <span className="block mt-3 sm:mt-4 text-base sm:text-lg font-semibold text-gray-900">
+                  Professional websites starting at <span className="text-2xl sm:text-3xl gradient-text font-bold">$40</span>/month — because every business deserves to shine online.
                 </span>
               </p>
             </TextReveal>
 
             {/* Enhanced Benefits with Emotional Language */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 max-w-2xl mx-auto lg:mx-0">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0">
               <div className="flex items-center justify-center lg:justify-start space-x-3 group">
                 <div className="w-5 h-5 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
                   <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -174,11 +175,11 @@ const Hero: React.FC = () => {
             </div>
             
             {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
               <button
                 onClick={handleGetStarted}
                 disabled={isLoading}
-                className="btn-primary py-4 px-8 text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
                 aria-label="Start your website project"
                 type="button"
               >
@@ -194,7 +195,7 @@ const Hero: React.FC = () => {
               
               <a
                 href="#portfolio"
-                className="btn-secondary py-4 px-8 text-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group"
+                className="btn-secondary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group w-full sm:w-auto text-center"
                 aria-label="View our portfolio of digital experiences"
               >
                 <span className="flex items-center justify-center gap-3">
@@ -211,8 +212,8 @@ const Hero: React.FC = () => {
           </div>
           
           {/* Enhanced Right Side with Sophisticated Mockup */}
-          <div className="flex-1 lg:pl-12">
-            <div className="relative max-w-lg mx-auto">
+          <div className="flex-1 lg:pl-12 w-full">
+            <div className="relative max-w-md sm:max-w-lg mx-auto">
               {/* Main Desktop Mockup with Enhanced Shadows */}
               <div className="relative bg-gray-900 rounded-t-xl p-3 shadow-2xl border border-gray-800 hover:shadow-3xl transition-all duration-500 group dark-bg-card">
                 {/* Enhanced Browser Header */}
@@ -281,7 +282,7 @@ const Hero: React.FC = () => {
               </div>
               
               {/* Enhanced Mobile Mockup */}
-              <div className="absolute -bottom-8 -right-8 w-28 bg-gray-900 rounded-xl p-1.5 shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-300 border border-gray-800 dark-bg-card">
+              <div className="absolute -bottom-4 sm:-bottom-8 -right-4 sm:-right-8 w-20 sm:w-28 bg-gray-900 rounded-xl p-1 sm:p-1.5 shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-300 border border-gray-800 dark-bg-card">
                 <div className="bg-white rounded-lg overflow-hidden">
                   <div className="h-2 bg-gradient-to-r from-[#E07A5F] to-[#D4A373]"></div>
                   <div className="p-3 space-y-2">
@@ -297,20 +298,20 @@ const Hero: React.FC = () => {
               </div>
               
               {/* Sophisticated Floating Elements */}
-              <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-br from-[#E07A5F]/15 to-[#D4A373]/15 rounded-full flex items-center justify-center border border-[#E07A5F]/30 backdrop-blur-sm">
+              <div className="hidden sm:flex absolute -top-6 sm:-top-8 -left-6 sm:-left-8 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-[#E07A5F]/15 to-[#D4A373]/15 rounded-full items-center justify-center border border-[#E07A5F]/30 backdrop-blur-sm">
                 <svg className="w-10 h-10 text-[#E07A5F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09z" />
                 </svg>
               </div>
               
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-[#D4A373]/15 to-[#E07A5F]/15 rounded-full flex items-center justify-center border border-[#D4A373]/30 backdrop-blur-sm">
+              <div className="hidden sm:flex absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-[#D4A373]/15 to-[#E07A5F]/15 rounded-full items-center justify-center border border-[#D4A373]/30 backdrop-blur-sm">
                 <svg className="w-8 h-8 text-[#D4A373]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
 
               {/* Additional Floating Quality Indicators */}
-              <div className="absolute top-1/3 -right-12 w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center border border-emerald-300/50 backdrop-blur-sm">
+              <div className="hidden lg:flex absolute top-1/3 -right-8 lg:-right-12 w-12 lg:w-14 h-12 lg:h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full items-center justify-center border border-emerald-300/50 backdrop-blur-sm">
                 <svg className="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>

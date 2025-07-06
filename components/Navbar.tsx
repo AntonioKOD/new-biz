@@ -18,6 +18,28 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle keyboard navigation for mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { 
       name: 'Home', 
@@ -51,6 +73,14 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Skip to main content link for screen readers */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#E07A5F] text-white px-4 py-2 rounded-lg z-[9999] focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        Skip to main content
+      </a>
+      
       <header
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${

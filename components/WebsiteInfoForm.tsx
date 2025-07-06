@@ -124,7 +124,7 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 relative overflow-hidden">
+    <div className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 py-8 sm:py-12 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gradient-to-br from-[#E07A5F]/8 to-[#D4A373]/6 rounded-full blur-3xl"></div>
@@ -132,25 +132,27 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
       </div>
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sm:p-12">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8 lg:p-12">
           {/* Header */}
           <div className="text-center mb-8">
             <TextReveal>
-              <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Tell Us About Your Website
               </h1>
             </TextReveal>
             <TextReveal delay={200}>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
                 Help us understand your vision so we can create the perfect website for your business. 
                 After checkout, we&apos;ll reach out to discuss the details and get started on your project.
               </p>
             </TextReveal>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Business Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8" role="form" aria-labelledby="form-title">
+          {/* Business Information */}
+          <fieldset className="border-0 p-0 m-0">
+            <legend className="text-lg font-semibold text-gray-900 mb-4 font-poppins">Business Information</legend>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label htmlFor="businessName" className="block text-sm font-semibold text-gray-900 mb-2">
                   Business Name *
@@ -192,9 +194,12 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
                 )}
               </div>
             </div>
+          </fieldset>
 
-            {/* Contact Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Contact Information */}
+          <fieldset className="border-0 p-0 m-0">
+            <legend className="text-lg font-semibold text-gray-900 mb-4 font-poppins">Contact Information</legend>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label htmlFor="contactEmail" className="block text-sm font-semibold text-gray-900 mb-2">
                   Email Address *
@@ -228,8 +233,11 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
                 />
               </div>
             </div>
+          </fieldset>
 
-            {/* Website Description */}
+          {/* Website Description */}
+          <fieldset className="border-0 p-0 m-0">
+            <legend className="text-lg font-semibold text-gray-900 mb-4 font-poppins">Website Requirements</legend>
             <div>
               <label htmlFor="siteDescription" className="block text-sm font-semibold text-gray-900 mb-2">
                 Describe Your Website Needs *
@@ -266,10 +274,10 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
 
             {/* Features */}
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-4">
+              <label className="block text-sm font-semibold text-gray-900 mb-3 sm:mb-4">
                 Desired Features (Select all that apply)
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                 {availableFeatures.map(feature => (
                   <label key={feature} className="flex items-center space-x-3 cursor-pointer group">
                     <input
@@ -287,7 +295,7 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
             </div>
 
             {/* Timeline and Budget */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label htmlFor="timeline" className="block text-sm font-semibold text-gray-900 mb-2">
                   Preferred Timeline
@@ -337,13 +345,14 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
                 placeholder="Any other details, special requirements, or questions..."
               />
             </div>
+          </fieldset>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
               <button
                 type="button"
                 onClick={onBack}
-                className="btn-secondary py-4 px-8 text-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2"
+                className="btn-secondary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 w-full sm:w-auto"
               >
                 ← Go Back
               </button>
@@ -351,7 +360,7 @@ const WebsiteInfoForm: React.FC<WebsiteInfoFormProps> = ({ onSubmit, onBack, isL
               <button
                 type="submit"
                 disabled={isLoading}
-                className="btn-primary py-4 px-8 text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed flex-1"
+                className="btn-primary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg hover:shadow-lg focus:outline-2 focus:outline-[#E07A5F] focus:outline-offset-2 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed flex-1 w-full sm:w-auto"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {isLoading ? (

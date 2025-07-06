@@ -44,14 +44,14 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                      <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
             Everything you need to know about our website services
           </p>
         </div>
@@ -63,9 +63,9 @@ const FAQ: React.FC = () => {
               {/* Question Header */}
               <div
                 onClick={() => toggleFAQ(index)}
-                className="flex justify-between items-center p-4 bg-[#FAFAFA] border-b border-[#E5E5E5] cursor-pointer hover:bg-[#F5F5F5] transition-colors duration-200"
+                className="flex justify-between items-center p-3 sm:p-4 bg-[#FAFAFA] border-b border-[#E5E5E5] cursor-pointer hover:bg-[#F5F5F5] transition-colors duration-200 touch-manipulation"
               >
-                <h3 className="font-semibold text-gray-900 text-left pr-4">
+                <h3 className="font-semibold text-gray-900 text-left pr-4 text-sm sm:text-base">
                   {faq.question}
                 </h3>
                 <div

@@ -15,7 +15,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Navbar />
       
       {/* Main Content */}
-      <main className="flex-1 scroll-smooth">
+      <main 
+        id="main-content"
+        className="flex-1 scroll-smooth"
+        role="main"
+        aria-label="Main content"
+      >
         {children}
       </main>
       

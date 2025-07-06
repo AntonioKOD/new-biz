@@ -64,7 +64,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="section-spacing px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Sophisticated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-[#E07A5F]/6 to-[#D4A373]/4 rounded-full blur-3xl"></div>
@@ -74,7 +74,7 @@ const Services: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Emotional Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="mb-6">
             <span className="inline-flex items-center gap-2 bg-gradient-to-r from-[#E07A5F]/10 to-[#D4A373]/10 border border-[#E07A5F]/20 text-[#E07A5F] px-4 py-2 rounded-full text-sm font-medium font-poppins">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -84,19 +84,19 @@ const Services: React.FC = () => {
             </span>
           </div>
           
-          <h2 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance leading-[1.1]">
+          <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 text-balance leading-[1.1]">
             <span className="block mb-2">Your Website Should Work</span>
             <span className="block gradient-text">As Hard As You Do.</span>
           </h2>
           
-          <p className="font-inter text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed text-balance">
+          <p className="font-inter text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed text-balance">
             We don&apos;t just build websites — we create digital spaces that make your business look amazing, 
             work perfectly, and help you grow without any of the technical headaches.
           </p>
         </div>
 
         {/* Experience Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
           {experiences.map((experience, index) => (
             <div
               key={experience.id}
@@ -113,24 +113,24 @@ const Services: React.FC = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon with Enhanced Animation */}
-                  <div className="mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${experience.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg group-hover:shadow-xl`}>
+                  <div className="mb-4 sm:mb-6">
+                    <div className={`w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br ${experience.gradient} rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg group-hover:shadow-xl`}>
                       {experience.icon}
                     </div>
                   </div>
                   
                   {/* Emotion Badge */}
-                  <div className="inline-block bg-gradient-to-r from-[#E07A5F]/10 to-[#D4A373]/10 border border-[#E07A5F]/20 px-4 py-2 rounded-full text-sm font-semibold mb-4 font-poppins group-hover:bg-gradient-to-r group-hover:from-[#E07A5F]/15 group-hover:to-[#D4A373]/15 transition-all duration-300">
+                  <div className="inline-block bg-gradient-to-r from-[#E07A5F]/10 to-[#D4A373]/10 border border-[#E07A5F]/20 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 font-poppins group-hover:bg-gradient-to-r group-hover:from-[#E07A5F]/15 group-hover:to-[#D4A373]/15 transition-all duration-300">
                     <span className="text-[#E07A5F]">{experience.emotion}</span>
                   </div>
                   
                   {/* Title */}
-                  <h3 className="font-poppins font-bold text-gray-900 mb-4 text-2xl group-hover:text-[#E07A5F] transition-colors duration-300 leading-tight">
+                  <h3 className="font-poppins font-bold text-gray-900 mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:text-[#E07A5F] transition-colors duration-300 leading-tight">
                     {experience.title}
                   </h3>
                   
                   {/* Emotional Description */}
-                  <p className="font-inter text-gray-700 leading-relaxed text-lg">
+                  <p className="font-inter text-gray-700 leading-relaxed text-base sm:text-lg">
                     {experience.description}
                   </p>
                 </div>
@@ -145,26 +145,26 @@ const Services: React.FC = () => {
         </div>
 
         {/* Enhanced Philosophy Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="max-w-4xl mx-auto">
-            <h3 className="font-poppins text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-balance">
+            <h3 className="font-poppins text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-balance">
               We&apos;re Here to Make <span className="gradient-text">Your Life Easier</span>
             </h3>
-            <p className="font-inter text-lg text-gray-700 leading-relaxed text-balance mb-8">
+            <p className="font-inter text-base sm:text-lg text-gray-700 leading-relaxed text-balance mb-6 sm:mb-8">
               You started your business to follow your passion — not to become a web developer. 
               That&apos;s where we come in. We handle all the technical stuff so you can focus on what you love doing most.
             </p>
             
             {/* Process Indicators */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
               <div className="text-center group">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#E07A5F] to-[#D4A373] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
                   <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
                   </svg>
                 </div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">We Listen</h4>
-                <p className="text-gray-600 text-sm">Tell us about your business and what you want to achieve</p>
+                                  <h4 className="font-poppins font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">We Listen</h4>
+                  <p className="text-gray-600 text-xs sm:text-sm">Tell us about your business and what you want to achieve</p>
               </div>
               
               <div className="text-center group">
@@ -173,8 +173,8 @@ const Services: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
                   </svg>
                 </div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">We Create</h4>
-                <p className="text-gray-600 text-sm">Design and build a website that perfectly represents your brand</p>
+                <h4 className="font-poppins font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">We Create</h4>
+                <p className="text-gray-600 text-xs sm:text-sm">Design and build a website that perfectly represents your brand</p>
               </div>
               
               <div className="text-center group">
@@ -183,8 +183,8 @@ const Services: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
-                <h4 className="font-poppins font-semibold text-gray-900 mb-2">We Support</h4>
-                <p className="text-gray-600 text-sm">Keep everything running smoothly while you focus on your business</p>
+                <h4 className="font-poppins font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">We Support</h4>
+                <p className="text-gray-600 text-xs sm:text-sm">Keep everything running smoothly while you focus on your business</p>
               </div>
             </div>
           </div>
@@ -203,18 +203,18 @@ const Services: React.FC = () => {
                 </svg>
               </div>
               
-              <h3 className="font-poppins text-3xl font-bold text-gray-900 mb-4 text-balance">
+              <h3 className="font-poppins text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-balance">
                 Ready to Love <span className="gradient-text">Your Website</span>?
               </h3>
               
-              <p className="font-inter text-gray-700 mb-8 text-lg text-balance max-w-2xl mx-auto leading-relaxed">
+              <p className="font-inter text-gray-700 mb-6 sm:mb-8 text-base sm:text-lg text-balance max-w-2xl mx-auto leading-relaxed">
                 Join business owners who&apos;ve discovered what it feels like to have a website that actually helps their business grow.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a
                   href="#pricing"
-                  className="btn-primary py-4 px-8 text-lg hover:shadow-lg inline-flex items-center gap-3 group"
+                  className="btn-primary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg hover:shadow-lg inline-flex items-center gap-3 group w-full sm:w-auto justify-center"
                 >
                   <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09z" />
@@ -224,7 +224,7 @@ const Services: React.FC = () => {
                 
                 <a
                   href="#portfolio"
-                  className="btn-secondary py-4 px-8 text-lg inline-flex items-center gap-3 group"
+                  className="btn-secondary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg inline-flex items-center gap-3 group w-full sm:w-auto justify-center"
                 >
                   <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

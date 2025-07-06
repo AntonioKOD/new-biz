@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#111827] text-[#FAFAFA] py-6 text-center">
+    <footer className="bg-[#111827] text-[#FAFAFA] py-6 text-center" role="contentinfo" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact Email */}
         <div className="mb-4">
@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex justify-center items-center mb-4">
+        <nav className="flex justify-center items-center mb-4" aria-label="Social media links">
           {/* GitHub Icon - Hand-drawn style */}
           <a
             href="https://github.com/AntonioKOD"
@@ -83,7 +83,7 @@ const Footer = () => {
               </defs>
             </svg>
           </a>
-        </div>
+        </nav>
 
         {/* Copyright */}
         <div className="text-sm mt-4 text-[#9CA3AF]">

@@ -49,45 +49,45 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA]">
+    <section id="how-it-works" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             How We Work Together
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
             A simple, collaborative process that puts you in control every step of the way
           </p>
         </div>
 
         {/* Steps Container */}
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-12 lg:gap-8">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8 sm:gap-12 lg:gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="flex-1 text-center"
+              className="flex-1 text-center px-4 sm:px-0"
             >
               {/* Icon */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-3 sm:mb-4">
                 {step.icon}
               </div>
               
               {/* Title */}
-              <h3 className="font-bold text-gray-900 mt-2 text-xl mb-2">
+              <h3 className="font-bold text-gray-900 mt-2 text-lg sm:text-xl mb-2">
                 {step.title}
               </h3>
               
               {/* Duration */}
-              <div className="text-gray-700 text-sm font-medium mb-4">
+              <div className="text-gray-700 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
                 ({step.duration})
               </div>
               
               {/* Description */}
-              <p className="text-gray-700 text-sm leading-relaxed max-w-xs mx-auto">
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">
                 {step.description}
               </p>
               
@@ -100,7 +100,7 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* Timeline for Mobile */}
-        <div className="lg:hidden mt-12">
+        <div className="lg:hidden mt-8 sm:mt-12">
           <div className="flex justify-center items-center space-x-4">
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
@@ -114,13 +114,13 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-gray-700 mb-6">
+        <div className="text-center mt-12 sm:mt-16">
+          <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
             Ready to start this journey together? Let&apos;s bring your vision to life.
           </p>
           <a
             href="#pricing"
-            className="inline-block bg-[#E07A5F] hover:bg-[#D4A373] text-white py-3 px-8 rounded-lg font-semibold transition-colors duration-200"
+            className="inline-block bg-[#E07A5F] hover:bg-[#D4A373] text-white py-3 px-6 sm:px-8 rounded-lg font-semibold transition-colors duration-200 text-sm sm:text-base touch-manipulation"
           >
             Let&apos;s Get Started
           </a>

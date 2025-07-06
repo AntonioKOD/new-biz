@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Import Google Fonts with font-display: swap for better performance */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,6 +15,11 @@
   --text-primary: #111827;
   --text-secondary: #1f2937;
   --text-muted: #4b5563;
+  --primary-orange: #E07A5F;
+  --primary-brown: #D4A373;
+  --text-dark: #111827;
+  --text-gray: #6B7280;
+  --bg-light: #FAFAFA;
 }
 
 @theme inline {
@@ -784,4 +792,292 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Base styles with improved mobile performance */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Improved focus states for accessibility */
+*:focus {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 2px;
+}
+
+/* Performance optimizations */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Component styles with mobile-first approach */
+@layer components {
+  /* Professional card component with better mobile spacing */
+  .card-professional {
+    @apply bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-xl hover:border-gray-200;
+  }
+
+  /* Button components optimized for touch */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-[#E07A5F] to-[#D4A373] text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95 focus:ring-4 focus:ring-[#E07A5F]/30 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] touch-manipulation;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-white text-[#E07A5F] font-semibold rounded-lg border-2 border-[#E07A5F] transition-all duration-300 hover:bg-[#E07A5F] hover:text-white hover:shadow-lg active:scale-95 focus:ring-4 focus:ring-[#E07A5F]/30 min-h-[44px] touch-manipulation;
+  }
+
+  /* Form elements with better mobile UX */
+  .form-label {
+    @apply block text-sm font-semibold text-gray-900 mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E07A5F] focus:border-transparent transition-all duration-200 text-base min-h-[44px] touch-manipulation;
+  }
+
+  .form-input:focus {
+    @apply ring-2 ring-[#E07A5F] border-transparent;
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#E07A5F] to-[#D4A373] bg-clip-text text-transparent;
+  }
+
+  /* Navigation styles with improved mobile interaction */
+  .nav-link-professional {
+    @apply text-gray-700 hover:text-[#E07A5F] transition-colors duration-200 relative;
+  }
+
+  .nav-link-professional::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#E07A5F] to-[#D4A373] transition-all duration-300;
+  }
+
+  .nav-link-professional:hover::after {
+    @apply w-full;
+  }
+
+  /* Mobile navigation improvements */
+  .mobile-nav-link {
+    @apply block px-4 py-3 text-gray-700 hover:text-[#E07A5F] hover:bg-gray-50 rounded-lg transition-all duration-200 min-h-[44px] touch-manipulation;
+  }
+
+  /* Navbar background styles */
+  .navbar-professional {
+    @apply bg-white/90 backdrop-blur-lg border-b border-gray-100/50;
+  }
+
+  .navbar-scrolled {
+    @apply bg-white/95 backdrop-blur-xl shadow-sm border-b border-gray-200/50;
+  }
+
+  /* Mobile menu improvements */
+  .mobile-menu-professional {
+    @apply bg-white/95 backdrop-blur-xl;
+  }
+
+  /* Dark background for mockups */
+  .dark-bg-card {
+    @apply bg-gradient-to-br from-gray-900 to-gray-800;
+  }
+
+  /* Section spacing utility */
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+}
+
+/* Custom animations with performance considerations */
+@layer utilities {
+  /* Optimized animations for mobile */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+    will-change: transform;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+    will-change: background-position;
+  }
+
+  .animate-typewriter {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typewriter 2s steps(40) 1s forwards, blink-caret 1s step-end infinite;
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  .animate-fade-in-stagger {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Performance-optimized hover effects */
+  .hover-lift {
+    transition: transform 0.2s ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Touch-friendly sizing */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Safe area insets for mobile devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: currentColor; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  .animate-float,
+  .animate-float-delayed,
+  .animate-bounce-slow {
+    animation-duration: 8s;
+  }
+
+  /* Optimize text rendering on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Better touch targets */
+  button, a, input, select, textarea {
+    @apply touch-manipulation;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .gradient-text {
+    @apply text-[#E07A5F];
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+}
+
+/* Dark mode preparation (for future implementation) */
+@media (prefers-color-scheme: dark) {
+  /* Future dark mode styles can go here */
+}
+
+/* Print styles */
+@media print {
+  * {
+    @apply text-black bg-white;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
 }
