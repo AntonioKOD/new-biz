@@ -199,6 +199,18 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="google-site-verification" content={process.env.GOOGLE_VERIFICATION_CODE} />
+        {/* Google Ads Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17347121413"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17347121413');
+            `,
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${poppins.variable} antialiased font-inter`}
